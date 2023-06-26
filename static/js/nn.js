@@ -24,7 +24,7 @@ function nn(){
     results.forEach(one=>{
         query=query+one+"_"
     })
-    urlNN=`http://127.0.0.1:5000/nn/${query}`;
+    urlNN=`https://housepricing-austin.onrender.com/nn/${query}`;
     console.log(urlNN);
     d3.json(urlNN).then(data=>{
         // let coef=data.coefficients;

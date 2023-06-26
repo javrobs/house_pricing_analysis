@@ -20,7 +20,7 @@ function linear() {
     results.splice(6, 0, taxRateContent.value);
     console.log(results);
 
-    let urlLinear = "http://127.0.0.1:5000/linearModel"
+    let urlLinear = "https://housepricing-austin.onrender.com/linearModel"
     d3.json(urlLinear).then(data => {
         let coef = data.coefficients;
         let intercept = data.intercept;

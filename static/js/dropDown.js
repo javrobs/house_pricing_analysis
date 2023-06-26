@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:5000/unique/";
+const URL = "https://housepricing-austin.onrender.com/unique/";
 
 
 function setUp(section,variable,suffix){
