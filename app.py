@@ -11,11 +11,11 @@ from joblib import load
 app = Flask(__name__)
 
 # Read austin housing reduced CSV into df dataFrame
-df=pd.read_csv("../Resources/austin_calculations.csv")
+df=pd.read_csv("Resources/austin_calculations.csv")
 
 # Load scaler and neural network
-scaler = load('../Resources/nn/std_scaler.bin')
-nnmodel= tf.keras.models.load_model("../Resources/nn/neural_network.h5")
+scaler = load('Resources/nn/std_scaler.bin')
+nnmodel= tf.keras.models.load_model("Resources/nn/neural_network.h5")
 # create geojson from dataframe
 def geo_from_df(data):
     geo={"type": "FeatureCollection","features": []}
@@ -149,7 +149,7 @@ def nn(query):
 
 @app.route("/linearModel")
 def linear():
-    with open("../Resources/linear.json","r") as file:
+    with open("Resources/linear.json","r") as file:
         linear=jsonify(json.load(file))
         return linear
 
