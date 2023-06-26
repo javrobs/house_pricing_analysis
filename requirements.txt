@@ -3,5 +3,4 @@ flask_cors
 pandas
 gunicorn==19.7.1
 tensorflow
-json
 joblib
