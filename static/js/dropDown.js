@@ -1,4 +1,4 @@
-const URL = "https://housepricing-austin.onrender.com/unique/";
+const URL = address + "unique/";
 
 
 function setUp(section,variable,suffix){

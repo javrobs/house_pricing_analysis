@@ -20,7 +20,7 @@ function populateVariables(id){
 
 function scatter() {
   let indVarOne=document.querySelector("#iVariable1");
-  let URL=`https://housepricing-austin.onrender.com/graphs/${indVarOne.value}`;;
+  let URL=address+"graphs/"+indVarOne.value;
   d3.json(URL).then(data=>{
     grapher(data,indVarOne);
   });    

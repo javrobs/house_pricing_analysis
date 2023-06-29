@@ -14,13 +14,13 @@ var markers;
 function mapQuery(queries=""){
     let URL_geo;
     if (queries==""){
-        URL_geo="https://housepricing-austin.onrender.com/geo";
+        URL_geo=address+"geo";
     } else {
         let query="";
         queries.forEach(one=>{
             query=query+one+"_"
         })
-        URL_geo=`https://housepricing-austin.onrender.com/geoquery/${query}`;
+        URL_geo=address+"geoquery/"+query;
         console.log(URL_geo);
     };
     d3.json(URL_geo).then(data=>{

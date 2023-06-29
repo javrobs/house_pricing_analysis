@@ -28,22 +28,13 @@ def geo_from_df(data):
                 "properties": {"address":data["streetAddress"].iloc[i],
                                
                                "latestPrice":int(data["latestPrice"].iloc[i]),
-                            #    "yearBuilt":int(data["yearBuilt"].iloc[i]),
-                            #    "lotSizeSqFt":int(data["lotSizeSqFt"].iloc[i]),
                                "livingAreaSqFt":int(data["livingAreaSqFt"].iloc[i]),
                                "zipcode":int(data["zipcode"].iloc[i]),
-                            #    "numOfStories":int(data["numOfStories"].iloc[i]),
-                               "homeType":data["homeType"].iloc[i],
-                            #    "garageSpaces":int(data["garageSpaces"].iloc[i]),
                                "numOfBathrooms":int(data["numOfBathrooms"].iloc[i]),
                                "numOfBedrooms":int(data["numOfBedrooms"].iloc[i]),
                                "difference_nn":round(float(data["difference_nn"].iloc[i])),
                                "percent_change_nn":float(data["percent_change_nn"].iloc[i]),
-                               "predict_nn":round(float(data["predict_price_nn"].iloc[i])),
-                               "difference_lr":round(float(data["difference_lr"].iloc[i])),
-                               "percent_change_lr":float(data["percent_change_lr"].iloc[i]),
-                               "predict_lr":round(float(data["predicted_price_lr"].iloc[i])),
-
+                               "predict_nn":round(float(data["predict_price_nn"].iloc[i]))
                               }}
         geo["features"].append(one_feat)
     return geo
@@ -56,13 +47,10 @@ CORS(app)
 def home():
     return \
     """
-    <b>To Website:</b><br>
-    <a href='http://127.0.0.1:5000/endpoint'>Austin Housing Prices</a><br>
-    <br>
-    <b>To API:</b><br>
-    <a href='http://127.0.0.1:5000/geo'>GeoJSON</a><br>
-    <a href='http://127.0.0.1:5000/unique/zipcode'>Unique values</a> (Ex: zipcode)<br>
-    <a href='http://127.0.0.1:5000/linearModel'>Linear Model Coefficients and intersection</a><br>
+    <b>To Deployed Website:</b><br>
+    <a href='https://housepricing-austin.onrender.com/endpoint'>Austin Housing Prices</a><br>
+    <b>To Local Website:</b><br>
+    <a href='http://127.0.0.1:5000/local'>Austin Housing Prices (Run locally)</a><br>
     """
 
 #Retrieve geojson
@@ -130,12 +118,12 @@ def nn(query):
         if query=="":
             query_list[i]=0
         query_list[i]=float(query_list[i])
-    zips=['78702','78703','78704','78717','78721',
- '78723','78724','78727','78728','78729',
- '78730','78731','78732','78733','78735',
- '78737','78739','78741','78744','78745',
- '78747','78748','78749','78750','78753',
- '78754','78757','78758','78759','Other']
+    zips=[78702,78703,78704,78717,78721,
+ 78723,78724,78727,78728,78729,
+ 78730,78731,78732,78733,78735,
+ 78737,78739,78741,78744,78745,
+ 78747,78748,78749,78750,78753,
+ 78754,78757,78758,78759,'Other']
     zipcode=query_list[2]
     if (zipcode in zips)==False:
         zipcode="Other"
@@ -166,30 +154,14 @@ def graphs(variable):
                     "lr_price":lr_price,
                     "x":x})
 
-@app.route("/graphs/<variable>/<variable2>")
-def graphs3D(variable,variable2):
-    og_price=df["latestPrice"].to_list()
-    lr_price=df["predicted_price_lr"].to_list()
-    nn_price=df["predict_price_nn"].to_list()
-    y=df[variable2].to_list()
-    x=df[variable].to_list()
-    # print(x)
-    # print(y)
-    return jsonify({"y":y, 
-                    "x":x,
-                    "og_price":og_price,
-                    "nn_price":nn_price,
-                    "lr_price":lr_price})
-
-
 #Use render_template to return the dashboard HTML site
 @app.route("/endpoint")
 def endpoint():
     return (render_template('index.html'))
 
-@app.route("/graph_only")
+@app.route("/local")
 def deletethis():
-    return (render_template('graph.html'))
+    return (render_template('local.html'))
         
 #Run app code
 if __name__=="__main__":

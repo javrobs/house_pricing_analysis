@@ -8,6 +8,7 @@ body{
     height: 100%;
     width:100%;
     position:fixed;
+    z-index:0;
     padding:0;
 }
 
@@ -19,10 +20,6 @@ h1,h2,h3, th, label{
 #header{
     border-bottom: 1px solid rgb(179, 179, 179);
 }
-
-/* #predict label{
-    min-width:150px;
-} */
 
 label{
     margin:0 8px;
@@ -44,20 +41,14 @@ input[type=number]{
 
 table{
     width:100%;
-    /* margin-left:1%;
-    margin-right:1%; */
-    /* display:inline; */
     transition: 0.2s;
     padding:10px;
-    /* border:1px solid #2e160f; */
 }
 
 th,td{
     padding:0 10px;
     height:35px;
     min-width:80px;
-    
-    
 }
 
 th{
@@ -71,15 +62,17 @@ select{
 }
 
 .content {
-    padding: 0;
+    position:relative;
     width:0;
-    display: block;
-    z-index:1;  
+    display: inline-block;
+    z-index:1;
     overflow:hidden;
-    height:100%;
+    height:0;
+    margin-right: -4px;
     background-color:#F1F8F9;
     /* transition: 0.5s; */
     box-shadow:3px 3px 5px -2px #2e160f;
+
   }
 
 #linear_output{
@@ -88,44 +81,41 @@ select{
     text-align: center;
 }
 
+.menu{
+    padding:0;
+}
 
 .align-middle{
     text-align:center;
 }
 
-#graphButton {
-    position:absolute;
-    top:165px;
-    z-index:9;
-    width:40px;
+@media (min-width:10px){
+
 }
 
-#priceButton {
-    position:absolute;
-    top:215px;
-    z-index:9;
-    width:40px;
+#widget-bar{
+    max-width:62px;
+    /* border:1px solid black; */
+    z-index:3;
+    margin-right: -4px;
+    display: inline-block;
+    position:relative;
+    vertical-align: top;
 }
-
-
-#filterButton {
-    position:absolute;
-    top:115px;
-    z-index:9;
-    width:40px;
-}
-
-/* .scroller{
-    overflow-y:scroll;
-} */
 
 .btn{
-    margin:10px;
+    margin:5px;
     box-shadow: 0px 0px 6px -2px #2e160f;
     background-color: #FF9985;
-    width:80%;
 }
 
+.widget{
+    width:40px;
+}
+
+.btn-submit{
+    width:163px;
+}
 .btn:enabled:hover{
     background-color: #ff4824;
 }
