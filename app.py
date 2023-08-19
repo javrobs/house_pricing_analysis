@@ -1,6 +1,5 @@
 #Import flask
 from flask import Flask,jsonify
-from flask_cors import CORS
 from flask import render_template
 import json
 import pandas as pd
@@ -26,7 +25,6 @@ def geo_from_df(data):
                     "coordinates": [data["longitude"].iloc[i],data["latitude"].iloc[i]]
                     },
                 "properties": {"address":data["streetAddress"].iloc[i],
-                               
                                "latestPrice":int(data["latestPrice"].iloc[i]),
                                "livingAreaSqFt":int(data["livingAreaSqFt"].iloc[i]),
                                "zipcode":int(data["zipcode"].iloc[i]),
@@ -39,19 +37,10 @@ def geo_from_df(data):
         geo["features"].append(one_feat)
     return geo
 
-# Override chrome's CORS settings to be able to connect two different local ports
-CORS(app)
-
 #Create main route for API
 @app.route("/")
 def home():
-    return \
-    """
-    <b>To Deployed Website:</b><br>
-    <a href='https://housepricing-austin.onrender.com/endpoint'>Austin Housing Prices</a><br>
-    <b>To Local Website:</b><br>
-    <a href='http://127.0.0.1:5000/local'>Austin Housing Prices (Run locally)</a><br>
-    """
+    return render_template('index.html')
 
 #Retrieve geojson
 @app.route("/geo")
@@ -107,6 +96,7 @@ def geoquery(query):
 @app.route("/unique/<column>")
 def unique(column):
     results=df[column].unique().tolist()
+    results.sort()
     return jsonify(results)
 
 @app.route("/nn/<query>")
@@ -154,15 +144,7 @@ def graphs(variable):
                     "lr_price":lr_price,
                     "x":x})
 
-#Use render_template to return the dashboard HTML site
-@app.route("/endpoint")
-def endpoint():
-    return (render_template('index.html'))
-
-@app.route("/local")
-def deletethis():
-    return (render_template('local.html'))
-        
+   
 #Run app code
 if __name__=="__main__":
     app.run(debug=True)

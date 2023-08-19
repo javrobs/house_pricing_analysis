@@ -20,8 +20,8 @@ function populateVariables(id){
 
 function scatter() {
   let indVarOne=document.querySelector("#iVariable1");
-  let URL=address+"graphs/"+indVarOne.value;
-  d3.json(URL).then(data=>{
+  let URL="graphs/"+indVarOne.value;
+  fetch(URL).then(data=>data.json()).then(data=>{
     grapher(data,indVarOne);
   });    
 };

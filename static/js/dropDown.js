@@ -1,26 +1,30 @@
-const URL = address + "unique/";
-
-
-function setUp(section,variable,suffix){
-    d3.json(URL+variable).then((data)=>{
+function setUp(variable,suffix){
+    fetch("unique/"+variable).then(data=>data.json()).then((data)=>{
+        let selector=document.querySelector(`select#${variable}_${suffix}`)
         data.forEach(one=>{
-            // d3.select(`select#${variable}_${suffix}`).append('option').attr("value", one).text(one);
-            d3.select(`select#${variable}_${suffix}`).append('option').attr("value", one).text(one);
+            let one_option=document.createElement('option');
+            one_option.setAttribute("value", one);
+            one_option.innerHTML=one;
+            selector.appendChild(one_option);
         })
     });
 }
 
-function setUpFromList(section,variable,texts,values,suffix){
+function setUpFromList(variable,texts,values,suffix){
+    let selector=document.querySelector(`select#${variable}_${suffix}`)
     for(let i=0;i<texts.length;i++){
-        d3.select(`select#${variable}_${suffix}`).append('option').attr("value", values[i]).text(texts[i]);
+        let one_option=document.createElement('option');
+        one_option.setAttribute("value", values[i])
+        one_option.innerHTML=texts[i];
+        selector.appendChild(one_option);
     }
 }
 
 
-setUp("filters","zipcode","flt");
-setUp("filters","homeType","flt");
-setUpFromList("filters","stories",["One-floor plan"],[1],"flt");
-setUpFromList("filters","baths",["1.5+","2+","3+"],[1.5,2,3],"flt");
-setUpFromList("filters","garage",["1+","2+","3+"],[1,2,3],"flt");
-setUpFromList("filters","bedrooms",["2+","3+"],[2,3],"flt");
+setUp("zipcode","flt");
+setUp("homeType","flt");
+setUpFromList("stories",["One-floor plan"],[1],"flt");
+setUpFromList("baths",["1.5+","2+","3+"],[1.5,2,3],"flt");
+setUpFromList("garage",["1+","2+","3+"],[1,2,3],"flt");
+setUpFromList("bedrooms",["2+","3+"],[2,3],"flt");
 

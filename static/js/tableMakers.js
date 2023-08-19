@@ -42,10 +42,10 @@ function tableMakerInput(section,title,ids,labels,types,suffix){
         }
         table.appendChild(row);
         if (types[i]==="select"){
-            setUp(section,ids[i],suffix); 
+            setUp(ids[i],suffix); 
         }
         if (types[i+1]==="select"){
-            setUp(section,ids[i+1],suffix);
+            setUp(ids[i+1],suffix);
         }
     }
 }

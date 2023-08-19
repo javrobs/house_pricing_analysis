@@ -14,16 +14,16 @@ var markers;
 function mapQuery(queries=""){
     let URL_geo;
     if (queries==""){
-        URL_geo=address+"geo";
+        URL_geo="/geo";
     } else {
         let query="";
         queries.forEach(one=>{
             query=query+one+"_"
         })
-        URL_geo=address+"geoquery/"+query;
+        URL_geo="/geoquery/"+query;
         console.log(URL_geo);
     };
-    d3.json(URL_geo).then(data=>{
+    fetch("../data/mapinfo.geojson").then(data=>data.json()).then(data=>{
     let features=data["features"];
     markers=L.layerGroup();
         console.log(data);
