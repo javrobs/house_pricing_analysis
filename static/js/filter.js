@@ -25,7 +25,6 @@ function clearFilter(){
     let selects=document.querySelectorAll("#filters select");
     let inputsBinary=document.querySelectorAll("#filters input[type='checkbox']");
     for (let i=0;i<inputsNumbers.length;i++){
-        // inputsNumbers[i].setAttribute("value","")
         inputsNumbers[i].value="";
     }
     for (let i=0;i<selects.length;i++){

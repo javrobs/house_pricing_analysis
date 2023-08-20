@@ -1,30 +1,21 @@
-function collapsible(id){
-    let expandSection=document.querySelector("#"+id);
-    expandSection.classList.toggle("collapsed");
-    console.log(expandSection);
-    let allsections=document.querySelectorAll(".content")
-    for (let i=0;i<allsections.length;i++){
-        console.log(allsections[i].id)
-        if (allsections[i]!==expandSection){
-            allsections[i].classList.add("collapsed");
+const menu=document.querySelector("#menu");
+
+function collapsible(ids){
+    let showSections=ids.map(id=>document.querySelector("#"+id));
+    let allSections=document.querySelectorAll(".content");
+    for (let i=0;i<allSections.length;i++){
+        console.log(allSections[i]);
+        if (showSections.includes(allSections[i])===false){
+            console.log("remove:",allSections[i]);
+            allSections[i].classList.add("not-shown");
+        } else if (allSections[i].classList.contains("not-shown")){
+            console.log("expand:",allSections[i]);
+            allSections[i].classList.remove("not-shown");
+            menu.classList.add("expand");
+        } else {
+            console.log("collapse:",allSections[i]);
+            allSections[i].classList.add("not-shown");
+            menu.classList.remove("expand");
         };
     };
-    // let sections=["filters","graphs","predict"].filter(each=>{
-    //     return each!=section;
-    // });
-    // console.log("Remaining sections",sections);
-    // if (d3.select(`#${section}`).style("width")=="0px"){
-    //     sections.forEach(each=>{
-    //         d3.select(`#${each}`).style("width",0);
-    //         d3.select(`#${each}`).style("height",0);
-    //     });
-    //     d3.select(`#${section}`).style("width","450px");
-    //     d3.select(`#${section}`).style("height","auto");
-
-    // } else {
-    //     console.log(`collapse ${section}`)
-    //     d3.select(`#${section}`).style("width",0);
-    //     d3.select(`#${section}`).style("height",0);
-    //     d3.select(`#${section}`).style("marginLeft",0);
-    // }
-}
+};
