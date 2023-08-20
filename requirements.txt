@@ -1,7 +1,0 @@
-flask 
-flask_cors 
-pandas
-gunicorn==19.7.1
-tensorflow
-joblib
-scikit-learn
