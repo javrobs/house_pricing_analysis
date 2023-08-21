@@ -4,18 +4,28 @@ function collapsible(ids){
     let showSections=ids.map(id=>document.querySelector("#"+id));
     let allSections=document.querySelectorAll(".content");
     for (let i=0;i<allSections.length;i++){
-        console.log(allSections[i]);
+        thisID=allSections[i].id;
         if (showSections.includes(allSections[i])===false){
             console.log("remove:",allSections[i]);
-            allSections[i].classList.add("not-shown");
+            hide(thisID);
         } else if (allSections[i].classList.contains("not-shown")){
             console.log("expand:",allSections[i]);
-            allSections[i].classList.remove("not-shown");
+            show(thisID)
             menu.classList.add("expand");
         } else {
             console.log("collapse:",allSections[i]);
-            allSections[i].classList.add("not-shown");
+            hide(thisID)
             menu.classList.remove("expand");
         };
     };
 };
+
+function show(id){
+    let section=document.querySelector("#"+id);
+    section.classList.remove("not-shown");
+}
+
+function hide(id){
+    let section=document.querySelector("#"+id);
+    section.classList.add("not-shown");
+}

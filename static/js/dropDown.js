@@ -1,5 +1,5 @@
-function setUpFromList(variable,texts,values,suffix){
-    let selector=document.querySelector(`select#${variable}_${suffix}`)
+function setUpFromList(variable,texts,values){
+    let selector=document.querySelector(`select#${variable}`)
     for(let i=0;i<texts.length;i++){
         let one_option=document.createElement('option');
         one_option.setAttribute("value", values[i])
@@ -18,9 +18,14 @@ var homeTypes=['Single Family', 'Residential', 'Mobile / Manufactured',
 'Townhouse', 'Condo', 'Multiple Occupancy', 'Vacant Land', 'Other',
 'Apartment', 'MultiFamily'];
 
-setUpFromList("zipcode",zipcodes,zipcodes,"flt");
-setUpFromList("homeType",homeTypes,homeTypes,"flt");
-setUpFromList("stories",["One-floor plan"],[1],"flt");
-setUpFromList("baths",["1.5+","2+","3+"],[1.5,2,3],"flt");
-setUpFromList("garage",["1+","2+","3+"],[1,2,3],"flt");
-setUpFromList("bedrooms",["2+","3+"],[2,3],"flt");
+setUpFromList("zipcode",zipcodes,zipcodes);
+setUpFromList("homeType",homeTypes,homeTypes);
+setUpFromList("stories",["One-floor plan"],[1]);
+setUpFromList("baths",["1.5+","2+","3+","4+","5+"],[1.5,2,3,4,5]);
+setUpFromList("garage",["1+","2+","3+"],[1,2,3]);
+setUpFromList("bedrooms",["2+","3+","4+","5+"],[2,3,4,5]);
+setUpFromList("independent",['Bedrooms','Bathrooms',
+'Lot Size (ft²)','Living Area (ft²)',
+'Garage Spaces','Stories','Year Built'],['numOfBedrooms','numOfBathrooms',
+'lotSizeSqFt','livingAreaSqFt',
+'garageSpaces','numOfStories','yearBuilt'])

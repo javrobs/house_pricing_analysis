@@ -4,31 +4,23 @@ function filterMap(){
     let selects=document.querySelectorAll("#filters select");
     let result=[];
     for (let i=0;i<inputsNumbers.length;i++){
-        result.push(inputsNumbers[i].value)
-    }
+        result.push(inputsNumbers[i].value);
+    };
     for (let i=0;i<selects.length;i++){
-        result.push(selects[i].value)
-        // console.log(selects[i].id,selects[i].value)
-    }
+        result.push(selects[i].value);
+    };
     document.querySelector("#filterClear").removeAttribute("disabled");
     clearMap();
-    mapQuery(result);
-}
+    mapQuery(result,true);
+};
 
 function clearFilter(){
-    let inputsNumbers=document.querySelectorAll("#filters input[type='number']");
-    let selects=document.querySelectorAll("#filters select");
-    let inputsBinary=document.querySelectorAll("#filters input[type='checkbox']");
-    for (let i=0;i<inputsNumbers.length;i++){
-        inputsNumbers[i].value="";
-    }
-    for (let i=0;i<selects.length;i++){
-        selects[i].value="All";
-    }
-    for (let i=0;i<inputsBinary.length;i++){
-        inputsBinary[i].checked=false;
-    }
+    let inputs=document.querySelectorAll("#filters input[type='number'],#filters select");
+    for (let i=0;i<inputs.length;i++){
+        inputs[i].value="";
+    };
     document.querySelector("#filterClear").setAttribute("disabled", "");
     clearMap();
+    hide("results");
     mapQuery();
-}
+};

@@ -1,23 +1,3 @@
-// Populate selector for independent variable used in graph
-populateVariables("iVariable1");
-
-// Populate dropdown menu for variable in grapher widget
-function populateVariables(id){
-  let idsVariables=['numOfBedrooms','numOfBathrooms',
-  'lotSizeSqFt','livingAreaSqFt',
-  'garageSpaces','numOfStories','yearBuilt'];
-  let labelsVariables=['Bedrooms','Bathrooms',
-  'Lot Size (ft²)','Living Area (ft²)',
-  'Garage Spaces','Stories','Year Built'];
-  let select=document.querySelector(`#${id}`);
-  for (let i=0;i<idsVariables.length;i++){
-    let option=document.createElement("option")
-    option.innerText=labelsVariables[i];
-    option.setAttribute("value",idsVariables[i]);
-    select.appendChild(option);
-  }
-}
-
 function scatter() {
   let indVarOne=document.querySelector("#iVariable1");
   let URL="graphs/"+indVarOne.value;

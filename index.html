@@ -38,12 +38,12 @@
           </div>
           <div class="content not-shown row m-0" id="about">
             <div class="col-12 blue-back p-0"><h6  class="p-2 m-0">Overview</h6></div>
-            <div class="col-12">
-              <p class="p-1 m-0">We analyzed Austin, Texas, home prices for sales from 2018 through 2021. We used 30 variables as inputs for both a linear model and a neural network. We analyzed how these variables influenced sale prices. Variables included number of bathrooms and bedrooms, parking spaces, land area, and construction area.</p>
+            <div class="col-12 px-2 py-3">
+              <p class="m-0">We analyzed Austin, Texas, home prices for sales from 2018 through 2021. We used 30 variables as inputs for both a linear model and a neural network. We analyzed how these variables influenced sale prices. Variables included number of bathrooms and bedrooms, parking spaces, land area, and construction area.</p>
             </div>
             <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Tools</h6></div>
-            <div class="col-12">
-              <ul class="py-1 m-0">
+            <div class="col-12 px-2 py-3">
+              <ul class="m-0">
                 <li>Linear Regression - Scikit Learn</li>
                 <li>Neural network - TensorFlow</li>
                 <li>Plots - Plotly JS</li>
@@ -52,62 +52,72 @@
               </ul>
             </div>
             <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Source</h6></div>
-            <div class="col-12">
+            <div class="col-12 px-2 py-3">
               <a href="https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/input">Austin Housing - EDA, NLP, Models, Visualizations</a>
             </div>
               
           </div>
           <div class="content not-shown row m-0" id="filters">
             <div class="col-12 p-0 blue-back mb-2"><h6 class="p-2 m-0">Ranges</h6></div>
-            <div class="col-4 col-sm-2 col-md-4 px-1"></div>
-            <div class="col-4 col-sm-2 col-md-4 text-center px-1">Min</div>
-            <div class="col-4 col-sm-2 col-md-4 text-center ps-1 pe-2">Max</div>
-            <div class="d-none d-sm-inline d-md-none col-2 px-1"></div>
-            <div class="d-none d-sm-inline d-md-none col-2 text-center px-1">Min</div>
-            <div class="d-none d-sm-inline d-md-none col-2 text-center ps-1 pe-2">Max</div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Price</div>
-            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="pricemin_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="pricemax_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Year Built</div>
-            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="yearmin_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="yearmax_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Lot ft²</div>
-            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="lotmin_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="lotmax_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Living ft²</div>
-            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="livemin_flt"></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="livemax_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 py-0 pe-0"></div>
+            <div class="col-4 col-sm-2 col-md-4 text-center p-1 py-0 ps-3 ">Min</div>
+            <div class="col-4 col-sm-2 col-md-4 text-center p-1 py-0 pe-3">Max</div>
+            <div class="d-none d-sm-inline d-md-none col-2 p-1 py-0 pe-0"></div>
+            <div class="d-none d-sm-inline d-md-none col-2 text-center p-1 py-0 ps-3">Min</div>
+            <div class="d-none d-sm-inline d-md-none col-2 text-center p-1 py-0 pe-3">Max</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Price</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 ps-3"><input type="number" id="pricemin"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-3"><input type="number" id="pricemax"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Year Built</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 ps-3"><input type="number" id="yearmin"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-3"><input type="number" id="yearmax"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Lot ft²</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 ps-3"><input type="number" id="lotmin"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-3"><input type="number" id="lotmax"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Living ft²</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 ps-3"><input type="number" id="livemin"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-3"><input type="number" id="livemax"></div>
             <div class="col-12 p-0 blue-back my-3"><h6 class="p-2 m-0">Options</h6></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Zip code</div>
-            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="zipcode_flt"><option value="All">All</option></select></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Hometype</div>
-            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="homeType_flt"><option value="All">All</option></select></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Stories</div>
-            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="stories_flt"><option value="All">All</option></select></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Baths</div>
-            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="baths_flt"><option value="All">All</option></select></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Garage</div>
-            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="garage_flt"><option value="All">All</option></select></div>
-            <div class="col-4 col-sm-2 col-md-4 p-1 text-end pb-3">Bedrooms</div>
-            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2 pb-3"><select id="bedrooms_flt"><option value="All">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Zip code</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 px-3"><select id="zipcode"><option value="">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Hometype</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 px-3"><select id="homeType"><option value="">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Stories</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 px-3"><select id="stories"><option value="">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Garage</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 px-3"><select id="garage"><option value="">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end">Baths</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 px-3"><select id="baths"><option value="">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-0 text-end pb-3">Bedrooms</div>
+            <div class="col-8 col-sm-4 col-md-8 p-3 pt-1"><select id="bedrooms"><option value="">All</option></select></div>
+          </div>
+          <div class="content not-shown row m-0" id="results">
+            <div class="separator"></div>
+            <div class="col-12 p-0"><p class="p-2 m-0">There are <span id="count-placeholder"></span> matches for the set of filters you chose.</p></div>
           </div>
           <div class="content not-shown row m-0" id="filter-buttons">
             <div class="separator"></div>
-            <div class="col-6 text-center d-flex my-1 px-1"><button class="btn grow" type="button" id="filterGo" onclick="filterMap();">Go</button></div>
-            <div class="col-6 text-center d-flex my-1 px-1"><button class="btn grow" type="button" id="filterClear" onclick="clearFilter();" disabled>Clear</button></div>
+            <div class="col-6 text-center d-flex my-2 ps-2 pe-1"><button class="btn grow" type="button" id="filterGo" onclick="filterMap();">Go</button></div>
+            <div class="col-6 text-center d-flex my-2 ps-1 pe-2"><button class="btn grow" type="button" id="filterClear" onclick="clearFilter();" disabled>Clear</button></div>
           </div>
           <div class="content not-shown row m-0" id="graphs">
             <div class="col-12 p-0 blue-back"><h6 class="p-2 m-0">Scatter plot</h6></div>
-            <div class="col-4 col-sm-4 d-flex align-items-center justify-content-end">Independent variable:</div>
-            <div class="col-8 col-sm-5 d-flex align-items-center"><select id="iVariable1"></select></div>
-            <div class="col-12 col-sm-3 d-flex"><button class="btn grow" type="button" id="graphGo" onclick="scatter();" style="width:130px">Graph</button></div>
+            <div class="col-4 px-1 text-end my-3">Variable:</div>
+            <div class="col-8 ps-1 pe-3 my-3">
+              <select id="independent" onchange="scatter();">
+                <option value="">Select...</option>
+              </select>
+            </div>
+            <div class="separator"></div>
             <div class="col-12" id="graphContainer"></div>
           </div>
       </div>                       
-      <div class="d-none d-md-inline-flex flex-column" id="widgets">
-        <button type="button" class="btn side-btn" onclick="collapsible(['about']);"><i class="bi bi-info-circle-fill"></i></button>
-        <button type="button" class="btn side-btn" onclick="collapsible(['filters','filter-buttons']);"><i class="bi bi-funnel-fill"></i></button>
-        <button type="button" class="btn side-btn" onclick="collapsible(['graphs']);"><i class="bi bi-bar-chart-line-fill"></i></button>
+      <div class="d-none d-md-inline not-there">
+        <div class="d-flex flex-column" id="widgets">
+          <button type="button" class="btn side-btn" onclick="collapsible(['about']);"><i class="bi bi-info-circle-fill"></i></button>
+          <button type="button" class="btn side-btn" onclick="collapsible(['filters','filter-buttons']);"><i class="bi bi-funnel-fill"></i></button>
+          <button type="button" class="btn side-btn" onclick="collapsible(['graphs']);"><i class="bi bi-bar-chart-line-fill"></i></button>
+        </div>
       </div>
       <div class="col-12 col-md-auto grow" id="map">
       </div>
