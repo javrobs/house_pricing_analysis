@@ -8,11 +8,18 @@ function setUpFromList(variable,texts,values,suffix){
     }
 }
 
-var zipcodes=[]
-var homeTypes=[]
+var zipcodes=[78660, 78617, 78717, 78724, 78747, 78725, 78726, 78744, 78732,
+    78750, 78729, 78719, 78731, 78730, 78753, 78733, 78746, 78735,
+    78734, 78737, 78619, 78759, 78739, 78652, 78653, 78758, 78749,
+    78728, 78754, 78736, 78757, 78727, 78745, 78704, 78741, 78742,
+    78752, 78723, 78748, 78738, 78705, 78703, 78702, 78701, 78722,
+    78721, 78751, 78756];
+var homeTypes=['Single Family', 'Residential', 'Mobile / Manufactured',
+'Townhouse', 'Condo', 'Multiple Occupancy', 'Vacant Land', 'Other',
+'Apartment', 'MultiFamily'];
 
-// setUp("zipcode","flt");
-// setUp("homeType","flt");
+setUpFromList("zipcode",zipcodes,zipcodes,"flt");
+setUpFromList("homeType",homeTypes,homeTypes,"flt");
 setUpFromList("stories",["One-floor plan"],[1],"flt");
 setUpFromList("baths",["1.5+","2+","3+"],[1.5,2,3],"flt");
 setUpFromList("garage",["1+","2+","3+"],[1,2,3],"flt");

@@ -31,17 +31,17 @@
       </div>
     </div>
     <div class="row d-md-flex flex-md-row grow">
-      <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2 p-0 d-md-flex flex-column" id="menu">
+      <div class="col-12 col-md-4 col-lg-3 col-xxl-2 p-0 d-md-flex flex-column" id="menu">
           <div class="row d-none d-md-block col-12 text-center m-0" id="title">
             <h4 class="p-2 m-0">Austin Home Prices</h4>
             <div class="separator"></div>
           </div>
           <div class="content not-shown row m-0" id="about">
-            <div class="col-12 blue-back m-0 p-2"><h6>Overview</h6></div>
+            <div class="col-12 blue-back p-0"><h6  class="p-2 m-0">Overview</h6></div>
             <div class="col-12">
               <p class="p-1 m-0">We analyzed Austin, Texas, home prices for sales from 2018 through 2021. We used 30 variables as inputs for both a linear model and a neural network. We analyzed how these variables influenced sale prices. Variables included number of bathrooms and bedrooms, parking spaces, land area, and construction area.</p>
             </div>
-            <div class="col-12 blue-back m-0 p-2"><h6>Tools</h6></div>
+            <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Tools</h6></div>
             <div class="col-12">
               <ul class="py-1 m-0">
                 <li>Linear Regression - Scikit Learn</li>
@@ -51,60 +51,50 @@
                 <li>Layout - Bootstrap and CSS</li>
               </ul>
             </div>
-            <div class="col-12 blue-back m-0 p-2"><h6>Source</h6></div>
+            <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Source</h6></div>
             <div class="col-12">
               <a href="https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/input">Austin Housing - EDA, NLP, Models, Visualizations</a>
             </div>
               
           </div>
           <div class="content not-shown row m-0" id="filters">
-            <div class="col-12 p-0 blue-back mb-1"><h6 class="p-2 m-0">Ranges</h6></div>
-            <div class="col-4 px-1 py-0"></div>
-            <div class="col-4 text-center px-1 py-0">Min</div>
-            <div class="col-4 text-center px-1 py-0">Max</div>
-            <div class="col-4 p-1 text-end">Price</div>
-            <div class="col-4 p-1"><input type="number" id="pricemin_flt"></div>
-            <div class="col-4 p-1"><input type="number" id="pricemax_flt"></div>
-            <div class="col-4 p-1 text-end">Year Built</div>
-            <div class="col-4 p-1"><input type="number" id="yearmin_flt"></div>
-            <div class="col-4 p-1"><input type="number" id="yearmax_flt"></div>
-            <div class="col-4 p-1 text-end">Lot ft²</div>
-            <div class="col-4 p-1"><input type="number" id="lotmin_flt"></div>
-            <div class="col-4 p-1"><input type="number" id="lotmax_flt"></div>
-            <div class="col-4 p-1 text-end">Living ft²</div>
-            <div class="col-4 p-1"><input type="number" id="livemin_flt"></div>
-            <div class="col-4 p-1"><input type="number" id="livemax_flt"></div>
-            <div class="col-12 p-0 blue-back my-1"><h6 class="p-2 m-0">Options</h6></div>
-            <div class="col-5 p-1 text-end">Zip code</div>
-            <div class="col-7 p-1"><select id="zipcode_flt"><option value="All">All</option></select></div>
-            <div class="col-5 p-1 text-end">Hometype</div>
-            <div class="col-7 p-1"><select id="homeType_flt"><option value="All">All</option></select></div>
-            <div class="col-5 p-1 text-end">Stories</div>
-            <div class="col-7 p-1"><select id="stories_flt"><option value="All">All</option></select></div>
-            <div class="col-5 p-1 text-end">Baths</div>
-            <div class="col-7 p-1"><select id="baths_flt"><option value="All">All</option></select></div>
-            <div class="col-5 p-1 text-end">Garage</div>
-            <div class="col-7 p-1"><select id="garage_flt"><option value="All">All</option></select></div>
-            <div class="col-5 p-1 text-end">Bedrooms</div>
-            <div class="col-7 p-1"><select id="bedrooms_flt"><option value="All">All</option></select></div>
-            <div class="col-12 p-0 blue-back my-1"><h6 class="p-2 m-0">Amenities</h6></div>
-            <div class="col-1 p-0 d-sm-none"></div>
-            <div class="col-11 p-1"><input type="checkbox" id="cooling_flt" name="cooling" value="cooling"><label class="ps-1" for="cooling_flt">Only with Cooling</label></div>
-            <div class="col-1 p-0 d-sm-none"></div>
-            <div class="col-11 p-1"><input type="checkbox" id="heating_flt" name="heating" value="heating"><label class="ps-1" for="heating_flt">Only with Heating</label></div>
-            <div class="col-1 p-0 d-sm-none"></div>
-            <div class="col-11 p-1"><input type="checkbox" id="spa_flt" name="spa" value="spa"><label class="ps-1" for="spa_flt">Only with Spa</label></div>
-            <div class="col-1 p-0 d-sm-none"></div>
-            <div class="col-11 p-1"><input type="checkbox" id="view_flt" name="view" value="view"><label class="ps-1" for="view_flt">Only with View</label></div>
-            <div class="col-1 p-0 d-sm-none"></div>
-            <div class="col-11 p-1"><input type="checkbox" id="accessible_flt" name="accessible" value="accessible"><label class="ps-1" for="accessible_flt">Only Accessible</label></div>
-            <div class="col-1 p-0 d-sm-none"></div>
-            <div class="col-11 p-1"><input type="checkbox" id="parking_flt" name="parking" value="parking"><label class="ps-1" for="parking_flt">Only with Parking</label></div>
+            <div class="col-12 p-0 blue-back mb-2"><h6 class="p-2 m-0">Ranges</h6></div>
+            <div class="col-4 col-sm-2 col-md-4 px-1"></div>
+            <div class="col-4 col-sm-2 col-md-4 text-center px-1">Min</div>
+            <div class="col-4 col-sm-2 col-md-4 text-center ps-1 pe-2">Max</div>
+            <div class="d-none d-sm-inline d-md-none col-2 px-1"></div>
+            <div class="d-none d-sm-inline d-md-none col-2 text-center px-1">Min</div>
+            <div class="d-none d-sm-inline d-md-none col-2 text-center ps-1 pe-2">Max</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Price</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="pricemin_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="pricemax_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Year Built</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="yearmin_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="yearmax_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Lot ft²</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="lotmin_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="lotmax_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Living ft²</div>
+            <div class="col-4 col-sm-2 col-md-4 p-1"><input type="number" id="livemin_flt"></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 pe-2"><input type="number" id="livemax_flt"></div>
+            <div class="col-12 p-0 blue-back my-3"><h6 class="p-2 m-0">Options</h6></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Zip code</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="zipcode_flt"><option value="All">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Hometype</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="homeType_flt"><option value="All">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Stories</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="stories_flt"><option value="All">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Baths</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="baths_flt"><option value="All">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end">Garage</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2"><select id="garage_flt"><option value="All">All</option></select></div>
+            <div class="col-4 col-sm-2 col-md-4 p-1 text-end pb-3">Bedrooms</div>
+            <div class="col-8 col-sm-4 col-md-8 p-1 pe-2 pb-3"><select id="bedrooms_flt"><option value="All">All</option></select></div>
           </div>
           <div class="content not-shown row m-0" id="filter-buttons">
             <div class="separator"></div>
             <div class="col-6 text-center d-flex my-1 px-1"><button class="btn grow" type="button" id="filterGo" onclick="filterMap();">Go</button></div>
-            <div class="col-6 text-center d-flex my-1 px-1"><button class="btn grow" type="button" id="filterClear" onclick="clearFilter();">Clear</button></div>
+            <div class="col-6 text-center d-flex my-1 px-1"><button class="btn grow" type="button" id="filterClear" onclick="clearFilter();" disabled>Clear</button></div>
           </div>
           <div class="content not-shown row m-0" id="graphs">
             <div class="col-12 p-0 blue-back"><h6 class="p-2 m-0">Scatter plot</h6></div>
