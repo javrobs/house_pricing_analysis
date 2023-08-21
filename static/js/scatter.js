@@ -1,17 +1,30 @@
-function scatter() {
-  let indVarOne=document.querySelector("#iVariable1");
-  let URL="graphs/"+indVarOne.value;
-  fetch(URL).then(data=>data.json()).then(data=>{
-    grapher(data,indVarOne);
-  });    
+var graphData;
+const independent=document.getElementById("independent");
+
+fetch("https://raw.githubusercontent.com/javrobs/house_pricing_analysis/main/static/data/graphInfo.json").then(data=>data.json()).then(data=>{
+  graphData=data;
+  console.log(graphData);
+  setUpFromList("independent",['Bedrooms','Bathrooms',
+'Lot Size (ft²)','Living Area (ft²)',
+'Garage Spaces','Stories','Year Built'],['numOfBedrooms','numOfBathrooms',
+'lotSizeSqFt','livingAreaSqFt',
+'garageSpaces','numOfStories','yearBuilt']);
+  independent.addEventListener("change",scatter);
+});
+
+function scatter(event){
+  let chosenVar=event.target.value
+  
+  grapher(graphData[chosenVar])
 };
+
 
 function grapher(data){
   var realPrice = {
-    x: data["x"],
-    y: data["og_price"],
+    x: data,
+    y: graphData["latestPrice"],
     mode: 'markers',
-    type: 'scatter',
+    type: "scattergl",
     name:"Real Price",
     marker: {
       color: '#ff4824',
@@ -20,10 +33,10 @@ function grapher(data){
   };
 
   var lrPrice = {
-    x: data["x"],
-    y: data["lr_price"],
+    x: data,
+    y: graphData["predicted_price_lr"],
     mode: 'markers',
-    type: 'scatter',
+    type: 'scattergl',
     name: "Linear Regression",
     marker: {
       color: '#16597a',
@@ -32,10 +45,10 @@ function grapher(data){
   };
 
   var nnPrice = {
-    x: data["x"],
-    y: data["nn_price"],
+    x: data,
+    y: graphData["predict_price_nn"],
     mode: 'markers',
-    type: 'scatter',
+    type: 'scattergl',
     name: "Neural Network",
     marker: {
       color: '#84ae36',
@@ -46,8 +59,8 @@ function grapher(data){
   let Layout = {
             margin: { t: 5, l: 40 ,b:5,r:10},
             legend:{orientation:"h"},
-            height: 450,
-            width: 450,
+            height: "auto",
+            width: "auto",
             paper_bgcolor: "#F1F8F9",
             plot_bgcolor: "white"
  

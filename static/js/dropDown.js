@@ -24,8 +24,4 @@ setUpFromList("stories",["One-floor plan"],[1]);
 setUpFromList("baths",["1.5+","2+","3+","4+","5+"],[1.5,2,3,4,5]);
 setUpFromList("garage",["1+","2+","3+"],[1,2,3]);
 setUpFromList("bedrooms",["2+","3+","4+","5+"],[2,3,4,5]);
-setUpFromList("independent",['Bedrooms','Bathrooms',
-'Lot Size (ft²)','Living Area (ft²)',
-'Garage Spaces','Stories','Year Built'],['numOfBedrooms','numOfBathrooms',
-'lotSizeSqFt','livingAreaSqFt',
-'garageSpaces','numOfStories','yearBuilt'])
+
