@@ -1,5 +1,6 @@
 var graphData;
 const independent=document.getElementById("independent");
+isListening=false;
 
 fetch("https://raw.githubusercontent.com/javrobs/house_pricing_analysis/main/static/data/graphInfo.json").then(data=>data.json()).then(data=>{
   graphData=data;
@@ -59,8 +60,8 @@ function grapher(data){
   let Layout = {
             margin: { t: 5, l: 40 ,b:5,r:10},
             legend:{orientation:"h"},
-            height: "auto",
-            width: "auto",
+            height: 400,
+            autosize:true,
             paper_bgcolor: "#F1F8F9",
             plot_bgcolor: "white"
  
@@ -68,5 +69,14 @@ function grapher(data){
   var scatterData = [realPrice,lrPrice,nnPrice];
 
   Plotly.newPlot('graphContainer', scatterData,Layout);
+  if (isListening===false){
+    isListening=true;
+    window.addEventListener("resize",resizePlot);
+  };
+};
 
+function resizePlot(){
+  let plotWidth=document.querySelector("#graphContainer").offsetWidth;
+  let plotHeight=document.querySelector("#graphContainer").offsetHeight;
+  Plotly.update('graphContainer',{},{height:plotHeight,width:plotWidth});
 };
