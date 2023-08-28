@@ -10,7 +10,9 @@
 
 ## Project overview:
 The purpose of this project is to carry out an analysis of the real estate market behavior in Austin, Texas, from 2018 to 2021. Various variables that influence the determination of the sale price will be examined, such as the number of bathrooms, bedrooms, parking spaces, land area, and construction area, among others. This information will be used to predict, through linear regression and neural networks, whether the sale prices were in line with the market. ~~The same machine learning methods will be used to obtain a sale price based on users' input data of their house.~~  
+
 _Added with fork: The code has been modified to be strictly a serverless app, to be able to host on github pages._  
+
 We will create a visualization using ~~Python Flask as back-end,~~ HTML/CSS and JavaScript as front-end.
 
 ## Finding Data
@@ -24,16 +26,17 @@ There are about 15000 listings from 2018-2021, with over 40 columns for each lis
 ### Exploration and clean up
 The first step was to import the file "austin_housing.csv" to Jupyter Notebook and analyze it in order to be able to select the most relevant variables for the project.  
 The dataset was filtered to 30 variables, and "numOfSchools" was created as a result of summing the different school levels. All this data was exported to the "austin_housing_reduced.csv" file, which contains these columns and their related information:
-city,	streetAddress,	zipcode, latitude,	longitude,	propertyTaxRate,	garageSpaces,	hasCooling,	hasGarage,	hasHeating,	hasSpa,	hasView,	homeType,	yearBuilt,	latestPrice,	numPriceChanges,	numOfAccessibilityFeatures,	numOfAppliances,	numOfParkingFeatures,	numOfPatioAndPorchFeatures,	numOfSecurityFeatures,	numOfWaterfrontFeatures,	numOfWindowFeatures,	numOfCommunityFeatures,	lotSizeSqFt,	livingAreaSqFt,	avgSchoolRating,	numOfBathrooms,	numOfBedrooms,	numOfStories,	numOfSchools.
+city,	streetAddress,	zipcode, latitude,	longitude,	propertyTaxRate,	garageSpaces,	hasCooling,	hasGarage,	hasHeating,	hasSpa,	hasView,	homeType,	yearBuilt,	latestPrice,	numPriceChanges,	numOfAccessibilityFeatures,	numOfAppliances,	numOfParkingFeatures,	numOfPatioAndPorchFeatures,	numOfSecurityFeatures,	numOfWaterfrontFeatures,	numOfWindowFeatures,	numOfCommunityFeatures,	lotSizeSqFt,	livingAreaSqFt,	avgSchoolRating,	numOfBathrooms,	numOfBedrooms,	numOfStories,	numOfSchools.  
+
 Added with fork: The predicted prices (linear regression and NN) along with the selected characteristics were exported to a GeoJSON file for the Leaflet map to filter and read. Also shaped into a JSON file for Plotly plotting.
 
 
 ### Project Development
-The Austin House Pricing Project utilized Flask to develop a web application. The primary objective of this project was to display a map using Leaflet.
+The Austin House Pricing Project utilized Flask to develop a web application. The primary objective of this project was to display a map using Leaflet.  
 
-To enhance the functionality, machine learning techniques were employed. Both linear regression and neural networks were utilized to predict house prices ~~based on user input.~~
+To enhance the functionality, machine learning techniques were employed. Both linear regression and neural networks were utilized to predict house prices ~~based on user input.~~  
 
-~~The Flask application seamlessly integrated the machine learning models, enabling users to input specific parameters related to the house they were interested in. The models would then provide an estimated price based on the given inputs, utilizing the predictive capabilities of the trained models.~~
+~~The Flask application seamlessly integrated the machine learning models, enabling users to input specific parameters related to the house they were interested in. The models would then provide an estimated price based on the given inputs, utilizing the predictive capabilities of the trained models.~~  
 
 Overall, the project combined web development, data visualization, and machine learning techniques to create an interactive platform that allowed users to explore and obtain estimated prices for houses in Austin, Texas.
 
