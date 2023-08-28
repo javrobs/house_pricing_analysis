@@ -15,8 +15,12 @@ fetch("https://raw.githubusercontent.com/javrobs/house_pricing_analysis/main/sta
 
 function scatter(event){
   let chosenVar=event.target.value
+  if (chosenVar!==""){
+    grapher(graphData[chosenVar]);
+  } else {
+    clearGraph();
+  }
   
-  grapher(graphData[chosenVar])
 };
 
 
@@ -78,5 +82,11 @@ function grapher(data){
 function resizePlot(){
   let plotWidth=document.querySelector("#graphContainer").offsetWidth-1;
   let plotHeight=document.querySelector("#graphContainer").offsetHeight-1;
+  console.log("resizing",plotWidth,plotHeight);
   Plotly.update('graphContainer',{},{height:plotHeight,width:plotWidth});
 };
+
+
+function clearGraph(){
+  Plotly.purge("graphContainer");
+}

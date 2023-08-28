@@ -49,14 +49,19 @@ h2,h3,h4,h5{
         max-width:2068px;
         transition: max-width 1s ease-in;
     }
-    #filters,#about,#graphs{
+    #filters,#about{
         overflow-y: auto;
         scrollbar-width:thin;
         flex-grow: 1;
         align-content: flex-start;
     }
-    #graphs{
+    #graphs,#graphContainer{
         flex-wrap:nowrap;
+        flex-grow:1;
+        overflow: hidden;
+    }
+    #graphContainer>div{
+        height:100%;
     }
 }
 
