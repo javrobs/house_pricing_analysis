@@ -60,9 +60,6 @@ h2,h3,h4,h5{
         flex-grow:1;
         overflow: hidden;
     }
-    #graphContainer>div{
-        height:100%;
-    }
 }
 
 @media (max-width:767px){
@@ -75,6 +72,9 @@ h2,h3,h4,h5{
     }
     #graphs{
         flex-wrap:nowrap;
+    }
+    #graphContainer{
+        height:400px;
     }
 }
 
@@ -93,14 +93,19 @@ h2,h3,h4,h5{
     z-index:3;
 }
 
+.bottom-corner{
+    right:5px;
+    bottom:5px;
+    position:fixed;
+    z-index:5;
+}
+
 #widgets{
     align-content:start;
     align-items:start;
     gap:.5rem;
     padding:.5rem;
 }
-
-
 
 .content.not-shown{
     display:none !important;
@@ -159,3 +164,25 @@ input[type=number],select{
     background-color: var(--complement);
     box-shadow: 0 0 0px 3px var(--complementtransp);
 }
+
+.legend{
+    background-color: var(--midlight);
+    box-shadow:3px 3px 5px -2px var(--darktransp);
+
+}
+
+.legend-color{
+    height:12px;
+    width:12px;
+    border:1px solid var(--darktransp);
+    border-radius: 50%;
+}
+
+a{
+    color:var(--main)
+}
+
+a>i{
+    color:var(--dark);
+}
+

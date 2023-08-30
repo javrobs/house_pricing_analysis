@@ -33,7 +33,7 @@ function grapher(data){
     name:"Real Price",
     marker: {
       color: '#ff4824',
-      size: 6,
+      size: 7,
     },
   };
 
@@ -45,7 +45,7 @@ function grapher(data){
     name: "Linear Regression",
     marker: {
       color: '#16597a',
-      size: 5,
+      size: 6,
     },
   };
 
@@ -57,15 +57,15 @@ function grapher(data){
     name: "Neural Network",
     marker: {
       color: '#84ae36',
-      size: 4,
+      size: 5,
     },
   };
 
   let Layout = {
             margin: { t: 5, l: 40 ,b:5,r:10},
             legend:{orientation:"h"},
-            height: document.querySelector("#graphContainer").offsetHeight-1,
-            width: document.querySelector("#graphContainer").offsetWidth-1,
+            height: document.querySelector("#graphContainer").offsetHeight-15,
+            width: document.querySelector("#graphContainer").offsetWidth-15,
             paper_bgcolor: "#F1F8F9",
             plot_bgcolor: "white"
  
@@ -80,9 +80,8 @@ function grapher(data){
 };
 
 function resizePlot(){
-  let plotWidth=document.querySelector("#graphContainer").offsetWidth-1;
-  let plotHeight=document.querySelector("#graphContainer").offsetHeight-1;
-  console.log("resizing",plotWidth,plotHeight);
+  let plotWidth=document.querySelector("#graphContainer").offsetWidth-15;
+  let plotHeight=document.querySelector("#graphContainer").offsetHeight-15;
   Plotly.update('graphContainer',{},{height:plotHeight,width:plotWidth});
 };
 

@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Austin Housing Prices</title>
+  <title>Austin Home Prices</title>
+  <link rel="icon" type="image/x-icon" href="static/images/iconic2.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" type="text/css" href="static/css/styles.css" /> 
@@ -18,7 +19,7 @@
   <div class="container-fluid d-flex flex-column">
     <div class="row d-md-none" id="mini-widgets">
       <div class="col-12 text-center">
-        <h4 class="p-2 m-0">Austin Home Prices</h4>
+        <h4 class="p-2 m-0"><img src="static/images/letter.png" height="34" class="">ustin Home Prices</h4>
       </div>
       <div class="col-4 p-0">
         <button type="button" class="btn-section" onclick="collapsible(['about']);"><i class="bi bi-info-circle-fill"></i> About</button>
@@ -31,16 +32,27 @@
       </div>
     </div>
     <div class="row d-md-flex flex-md-row grow">
-      <div class="col-12 col-md-5 col-lg-4 col-xxl-3 p-0 d-md-flex flex-column" id="menu">
-          <div class="row d-none d-md-block col-12 text-center m-0" id="title">
+      <div class="col-12 col-md-5 col-lg-4 col-xxl-3 p-0 d-md-flex flex-column expand" id="menu">
+          <div class="row d-none d-md-block col-12 m-0 text-center" id="title">
             <img class="p-0" src="static/images/skyline.jpg">
-            <h4 class="p-2 m-0">Austin Home Prices</h4>
+            <h4 class="p-2 m-0"><img src="static/images/letter.png" height="34" class="">ustin Home Prices</h4>
             <div class="separator"></div>
           </div>
-          <div class="content not-shown row m-0" id="about">
+          <div class="content row m-0" id="about">
             <div class="col-12 blue-back p-0"><h6  class="p-2 m-0">Overview</h6></div>
             <div class="col-12 px-2 py-3">
-              <p class="m-0">We analyzed Austin, Texas, home prices for sales from 2018 through 2021. We used 30 variables as inputs for both a linear model and a neural network. We analyzed how these variables influenced sale prices. Variables included number of bathrooms and bedrooms, parking spaces, land area, and construction area.</p>
+              <p class="m-0">
+                This analysis examines house sale prices in Austin, Texas, spanning 2018 through 2021 in relation to 30 other variables, including number of baths and beds, parking spaces, land and construction area.
+                We analyzed how these variables influenced sale prices. The variables were used as inputs for both a linear model and a neural network.
+              </p>
+            </div>
+            <div class="col-12 blue-back p-0"><h6  class="p-2 m-0">How to use</h6></div>
+            <div class="col-12 px-2 py-3">
+              <ul class="m-0">
+                <li>Click/Tap the markers on the map to see details about postings.</li>
+                <li>Add filters to reduce the amount of results on the map.</li>
+                <li>Choose a variable to compare the linear and neural network prices against the real one on a scatter plot.</li>
+              </ul>
             </div>
             <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Tools</h6></div>
             <div class="col-12 px-2 py-3">
@@ -54,9 +66,14 @@
             </div>
             <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Source</h6></div>
             <div class="col-12 px-2 py-3">
-              <a href="https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/input">Austin Housing - EDA, NLP, Models, Visualizations</a>
+              Kaggle: <a href="https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/input">Austin Housing - EDA, NLP, Models, Visualizations</a>
             </div>
-              
+            <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Contact me</h6></div>
+            <div class="col-12 px-2 py-3 d-flex flex-column align-items-start">
+              <span><i class="bi bi-github px-2"></i>Github: <a href="https://github.com/javrobs" target="_blank">/javrobs</a></span>
+              <span><i class="bi bi-envelope px-2"></i>Email: <a href="mailto:javieroblesamar@gmail.com" target="_blank">javieroblesamar@gmail.com</a></span>
+              <span><i class="bi bi-linkedin px-2"></i>LinkedIn: <a href="https://www.linkedin.com/in/javier-robles-samar/" target="_blank">/javier-robles-samar</a></span>
+            </div>
           </div>
           <div class="content not-shown row m-0" id="filters">
             <div class="col-12 p-0 blue-back mb-2"><h6 class="p-2 m-0">Ranges</h6></div>
@@ -125,6 +142,11 @@
         </div>
       </div>
       <div class="col-12 col-md-auto grow" id="map">
+      </div>
+      <div class="d-none d-md-inline not-there bottom-corner">
+        <div class="d-flex flex-column">
+          <p>Hewo</p>
+        </div>
       </div>
     </div>
   </div>
