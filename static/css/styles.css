@@ -5,7 +5,7 @@
     --complementtransp:#FF4824AA;
     --complight:#f99985;
     --light:#F1F8F9;
-    --midlight:#F1F8F9;
+    --lighttransp:#F1F8F9F3;
     --dark:#312820;
     --darktransp:#312820AA;
 }
@@ -166,8 +166,9 @@ input[type=number],select{
 }
 
 .legend{
-    background-color: var(--midlight);
+    background-color: var(--lighttransp);
     box-shadow:3px 3px 5px -2px var(--darktransp);
+    border-radius: 10px;
 
 }
 
@@ -186,3 +187,10 @@ a>i{
     color:var(--dark);
 }
 
+.popup{
+    /* background-color: var(--light); */
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: var(--lighttransp) !important;
+}

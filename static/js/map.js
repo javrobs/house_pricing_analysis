@@ -71,22 +71,47 @@ function mapQuery(filters=["","","","","","","","","","","","","",""],showCount=
             lats.push(lat);
             lons.push(lon);
             notFound=true;
-            let marketvalue;
+            let marketvalue_nn;
+            let marketvalue_lr;
             let difference_nn=properties["latestPrice"]-properties["price_nn"];
-            console.log(properties["latestPrice"],properties["price_nn"]);
-            if (difference_nn<=0){
-                marketvalue=`<span style="color:green;">▼ $${(-difference_nn).toLocaleString("en-US")} cheaper<br>than our estimate: $${(properties["price_nn"]).toLocaleString("en-US")}<br></span>`
+            let difference_lr=properties["latestPrice"]-properties["price_lr"];
+            // if (difference_nn<=0){
+            //     marketvalue_nn=`<span style="color:green;">▼ $${(-difference_nn).toLocaleString("en-US")} lower than our estimate: $${(properties["price_nn"]).toLocaleString("en-US")}</span>`
+            // } else {
+            //     marketvalue_nn=`<span style="color:red;">▲ $${difference_nn.toLocaleString("en-US")} higher than our estimate: $${(properties["price_nn"]).toLocaleString("en-US")}</span>`
+            // }
+            // if (difference_lr<=0){
+            //     marketvalue_lr=`<span style="color:green;">▼ $${(-difference_lr).toLocaleString("en-US")} lower than our estimate: $${(properties["price_lr"]).toLocaleString("en-US")}</span>`
+            // } else {
+            //     marketvalue_lr=`<span style="color:red;">▲ $${difference_lr.toLocaleString("en-US")} higher than our estimate: $${(properties["price_lr"]).toLocaleString("en-US")}</span>`
+            // }
+             if (difference_nn<=0){
+                marketvalue_nn=`<span style="color:green;">$${(properties["price_nn"]).toLocaleString("en-US")}<br>(+$${(-difference_nn).toLocaleString("en-US")})</span>`
             } else {
-                marketvalue=`<span style="color:red;">▲ $${difference_nn.toLocaleString("en-US")} more expensive<br>than our estimate: $${(properties["price_nn"]).toLocaleString("en-US")}<br></span>`
+                marketvalue_nn=`<span style="color:red;">$${(properties["price_nn"]).toLocaleString("en-US")}<br>(-$${(difference_nn).toLocaleString("en-US")})</span>`
             }
-            let popupContent=`<div style="text-align:center">
+            if (difference_lr<=0){
+                marketvalue_lr=`<span style="color:green;">$${(properties["price_lr"]).toLocaleString("en-US")}<br>(+$${(-difference_lr).toLocaleString("en-US")})</span>`
+            } else {
+                marketvalue_lr=`<span style="color:red;">▲ ${(properties["price_lr"]).toLocaleString("en-US")}<br>(-$${(difference_nn).toLocaleString("en-US")})</span>`
+            }
+            let popupContent=`<div class="text-center row popup">
+            <div class="col-12">
             <span style="color:#16697A;font-size:22px;font-weight:bold">$${properties["latestPrice"].toLocaleString("en-US")}</span><br>
+            </div>
+            <div class="separator my-1"></div>
+            <div class="col-12">
             <span style="font-size:16px;font-weight:bold">${properties["address"]}, ${properties["zipcode"]}</span><br>
             ${properties["numOfBedrooms"]} beds, ${properties["numOfBathrooms"]} baths<br>
             ${properties["numOfStories"]} stories, ${properties["garageSpaces"]} garage<br>
             Living: ${properties["livingAreaSqFt"].toLocaleString("en-US")} ft², Lot: ${properties["lotSizeSqFt"].toLocaleString("en-US")} ft²<br>
-            Built in ${properties["yearBuilt"]}<br>
-            ${marketvalue}
+            Built in ${properties["yearBuilt"]}
+            </div>
+            <div class="separator my-1"></div>
+            <div class="col-6 px-1">Linear<br>Regression:</div>
+            <div class="col-6 px-1">Neural<br>Network:</div>
+            <div class="col-6 px-1">${marketvalue_lr}</div>
+            <div class="col-6 px-1">${marketvalue_nn}</div>
             </div>
             `
             let percentage=properties["latestPrice"]/properties["price_nn"];
