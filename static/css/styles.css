@@ -16,7 +16,8 @@
 }
 
 .container-fluid{
-    height:100vh;
+    height: 100vh; 
+    height: 100dvh;
 }
 
 body{
