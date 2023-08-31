@@ -162,11 +162,20 @@ input[type=number],select{
     font-size: large;
 }
 
-.btn-section:hover,.btn-section.active-now{
+.active-now{
+    font-weight:900;
+    box-shadow: inset 0 0 15px 3px var(--complement);
+}
+
+.btn.active-now{
+    box-shadow: inset 0 0 15px 3px var(--complement),0 0 3px 0px var(--complementtransp);
+}
+
+.btn-section:hover{
     background-color: var(--complement);
 }
 
-.btn:enabled:hover,.btn.active-now{
+.btn:enabled:hover{
     background-color: var(--complement);
     box-shadow: 0 0 0px 3px var(--complementtransp);
 }
