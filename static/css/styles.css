@@ -80,6 +80,7 @@ h2,h3,h4,h5{
     #application{
         overflow-y: auto;
         flex-wrap: nowrap;
+        scrollbar-width: thin;
     }
 }
 
