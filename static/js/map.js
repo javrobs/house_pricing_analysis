@@ -1,4 +1,4 @@
-var map = L.map('map',{zoomControl:false,trackResize:true,zoomDelta:0.5}).setView([30.291739606158348,-97.77869931230686],11);
+var map = L.map('map',{zoomControl:false}).setView([30.291739606158348,-97.77869931230686],11);
 var mapData;
 
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
