@@ -1,4 +1,4 @@
-var map = L.map('map',{zoomControl:false}).setView([30.291739606158348,-97.77869931230686],11);
+var map = L.map('map',{zoomControl:false,trackResize:true,zoomDelta:0.5}).setView([30.291739606158348,-97.77869931230686],11);
 var mapData;
 
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
@@ -15,26 +15,27 @@ fetch("https://raw.githubusercontent.com/javrobs/house_pricing_analysis/main/sta
     mapQuery();
 });
 
+map.on("click",collapseAll);
 
-legend = L.control({position: 'bottomright'});
+var legend = L.control({position: 'bottomright'});
     legend.onAdd=function (){
     let div = L.DomUtil.create('div', 'p-2 legend text-center');
     div.innerHTML +=`
     <h5 class="m-1">Legend</h5>
     <div class="separator"></div>
-    <p class="m-1">Estimated vs listed price:</p>
+    <p class="m-1">Neural Network vs Listed Price:</p>
     <table class="text-start mx-3">
     <tr>
     <td class="p-2"><div class="legend-color" style="background-color:#ff4824;"></div></td>
-    <td class="">Est. &lt; Listed (+20%)</td>
+    <td class="">Predicted &lt; Listed (+20%)</td>
     </tr>
     <tr>
     <td class="p-2"><div class="legend-color" style="background-color:#16597a;"></div></td>
-    <td class="">Est. ≈ Listed (±20%)</td>
+    <td class="">Predicted ≈ Listed (±20%)</td>
     </tr>
     <tr>
     <td class="p-2"><div class="legend-color" style="background-color:#84ae36;"></div></td>
-    <td class="">Est. &gt; Listed (-20%)</td>
+    <td class="">Predicted &gt; Listed (-20%)</td>
     </tr>
     </table>
     `
@@ -42,7 +43,6 @@ legend = L.control({position: 'bottomright'});
     legend.addTo(map);
 
 var markers;
-var legend;
 function mapQuery(filters=["","","","","","","","","","","","","",""],showCount=false){
     let features=mapData["features"];
     let lats=[];

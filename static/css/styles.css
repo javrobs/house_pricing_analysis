@@ -20,7 +20,8 @@
 }
 
 body{
-    color:var(--dark)
+    color:var(--dark);
+    background-color: var(--light);
 }
 
 h2,h3,h4,h5{
@@ -76,10 +77,13 @@ h2,h3,h4,h5{
     #graphContainer{
         height:400px;
     }
+    #application{
+        overflow-y: auto;
+        flex-wrap: nowrap;
+    }
 }
 
 #map {
-    height: 100%;
     z-index:0;
     padding:0;
 }
@@ -156,11 +160,11 @@ input[type=number],select{
     font-size: large;
 }
 
-.btn-section:hover{
+.btn-section:hover,.btn-section.active-now{
     background-color: var(--complement);
 }
 
-.btn:enabled:hover{
+.btn:enabled:hover,.btn.active-now{
     background-color: var(--complement);
     box-shadow: 0 0 0px 3px var(--complementtransp);
 }
@@ -187,9 +191,6 @@ a>i{
     color:var(--dark);
 }
 
-.popup{
-    /* background-color: var(--light); */
-}
 
 .leaflet-popup-content-wrapper {
     background-color: var(--lighttransp) !important;

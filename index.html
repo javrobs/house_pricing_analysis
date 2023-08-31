@@ -21,17 +21,20 @@
       <div class="col-12 text-center">
         <h4 class="p-2 m-0"><img src="static/images/letter.png" height="34" class="">ustin Home Prices</h4>
       </div>
-      <div class="col-4 p-0">
-        <button type="button" class="btn-section" onclick="collapsible(['about']);"><i class="bi bi-info-circle-fill"></i> About</button>
+      <div class="col-3 p-0">
+        <button id="about-btn-mini" type="button" class="btn-section widget active-now" onclick="collapsible(['about'],this,true);"><i class="bi bi-info-circle-fill"></i> About</button>
       </div>
-      <div class="col-4 p-0">
-        <button type="button" class="btn-section" onclick="collapsible(['filters','filter-buttons']);"><i class="bi bi-funnel-fill"></i> Filter</button>
+      <div class="col-3 p-0">
+        <button id="filters-btn-mini" type="button" class="btn-section widget" onclick="collapsible(['filters','filter-buttons'],this,true);"><i class="bi bi-funnel-fill"></i> Filter</button>
       </div>
-      <div class="col-4 p-0">
-        <button type="button" class="btn-section" onclick="collapsible(['graphs']);"><i class="bi bi-bar-chart-line-fill"></i> Graph</button>
+      <div class="col-3 p-0">
+        <button id="graph-btn-mini" type="button" class="btn-section widget" onclick="collapsible(['graphs'],this,true);"><i class="bi bi-bar-chart-line-fill"></i> Graph</button>
+      </div>
+      <div class="col-3 p-0">
+        <button id="map-btn-mini" type="button" class="btn-section widget" onclick="collapseAll();"><i class="bi bi-map-fill"></i> Map</button>
       </div>
     </div>
-    <div class="row d-md-flex flex-md-row grow">
+    <div class="row d-flex flex-column flex-md-row grow" id="application">
       <div class="col-12 col-md-5 col-lg-4 col-xxl-3 p-0 d-md-flex flex-column expand" id="menu">
           <div class="row d-none d-md-block col-12 m-0 text-center" id="title">
             <img class="p-0" src="static/images/skyline.jpg">
@@ -136,9 +139,9 @@
       </div>                       
       <div class="d-none d-md-inline not-there">
         <div class="d-flex flex-column" id="widgets">
-          <button type="button" class="btn side-btn" onclick="collapsible(['about']);"><i class="bi bi-info-circle-fill"></i></button>
-          <button type="button" class="btn side-btn" onclick="collapsible(['filters','filter-buttons']);"><i class="bi bi-funnel-fill"></i></button>
-          <button type="button" class="btn side-btn" onclick="collapsible(['graphs']);"><i class="bi bi-bar-chart-line-fill"></i></button>
+          <button id="about-btn" type="button" class="btn side-btn widget active-now" onclick="collapsible(['about'],this,false);"><i class="bi bi-info-circle-fill"></i></button>
+          <button id="filters-btn" type="button" class="btn side-btn widget" onclick="collapsible(['filters','filter-buttons'],this,false);"><i class="bi bi-funnel-fill"></i></button>
+          <button id="graph-btn" type="button" class="btn side-btn widget" onclick="collapsible(['graphs'],this,false);"><i class="bi bi-bar-chart-line-fill"></i></button>
         </div>
       </div>
       <div class="col-12 col-md-auto grow" id="map">
