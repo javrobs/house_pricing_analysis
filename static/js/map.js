@@ -83,7 +83,7 @@ function mapQuery(filters=["","","","","","","","","","","","","",""],showCount=
             if (difference_lr<=0){
                 marketvalue_lr=`<span style="color:green;">$${(properties["price_lr"]).toLocaleString("en-US")}<br>(+$${(-difference_lr).toLocaleString("en-US")})</span>`
             } else {
-                marketvalue_lr=`<span style="color:red;">$${(properties["price_lr"]).toLocaleString("en-US")}<br>(-$${(difference_nn).toLocaleString("en-US")})</span>`
+                marketvalue_lr=`<span style="color:red;">$${(properties["price_lr"]).toLocaleString("en-US")}<br>(-$${(difference_lr).toLocaleString("en-US")})</span>`
             }
             let popupContent=`<div class="text-center row popup">
             <div class="col-12">
