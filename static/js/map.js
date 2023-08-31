@@ -75,16 +75,6 @@ function mapQuery(filters=["","","","","","","","","","","","","",""],showCount=
             let marketvalue_lr;
             let difference_nn=properties["latestPrice"]-properties["price_nn"];
             let difference_lr=properties["latestPrice"]-properties["price_lr"];
-            // if (difference_nn<=0){
-            //     marketvalue_nn=`<span style="color:green;">▼ $${(-difference_nn).toLocaleString("en-US")} lower than our estimate: $${(properties["price_nn"]).toLocaleString("en-US")}</span>`
-            // } else {
-            //     marketvalue_nn=`<span style="color:red;">▲ $${difference_nn.toLocaleString("en-US")} higher than our estimate: $${(properties["price_nn"]).toLocaleString("en-US")}</span>`
-            // }
-            // if (difference_lr<=0){
-            //     marketvalue_lr=`<span style="color:green;">▼ $${(-difference_lr).toLocaleString("en-US")} lower than our estimate: $${(properties["price_lr"]).toLocaleString("en-US")}</span>`
-            // } else {
-            //     marketvalue_lr=`<span style="color:red;">▲ $${difference_lr.toLocaleString("en-US")} higher than our estimate: $${(properties["price_lr"]).toLocaleString("en-US")}</span>`
-            // }
              if (difference_nn<=0){
                 marketvalue_nn=`<span style="color:green;">$${(properties["price_nn"]).toLocaleString("en-US")}<br>(+$${(-difference_nn).toLocaleString("en-US")})</span>`
             } else {
@@ -93,7 +83,7 @@ function mapQuery(filters=["","","","","","","","","","","","","",""],showCount=
             if (difference_lr<=0){
                 marketvalue_lr=`<span style="color:green;">$${(properties["price_lr"]).toLocaleString("en-US")}<br>(+$${(-difference_lr).toLocaleString("en-US")})</span>`
             } else {
-                marketvalue_lr=`<span style="color:red;">▲ ${(properties["price_lr"]).toLocaleString("en-US")}<br>(-$${(difference_nn).toLocaleString("en-US")})</span>`
+                marketvalue_lr=`<span style="color:red;">$${(properties["price_lr"]).toLocaleString("en-US")}<br>(-$${(difference_nn).toLocaleString("en-US")})</span>`
             }
             let popupContent=`<div class="text-center row popup">
             <div class="col-12">
