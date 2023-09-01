@@ -21,16 +21,13 @@
       <div class="col-12 text-center">
         <h4 class="p-2 m-0"><img src="static/images/letter.png" alt="A" height="28" class="">ustin Home Prices</h4>
       </div>
-      <div class="col-3 p-0">
+      <div class="col-4 p-0">
         <button id="about-btn-mini" type="button" class="btn-section widget active-now" onclick="collapsible(['about'],this,true);"><i class="bi bi-info-circle-fill"></i> About</button>
       </div>
-      <div class="col-3 p-0">
+      <div class="col-4 p-0">
         <button id="filters-btn-mini" type="button" class="btn-section widget" onclick="collapsible(['filters','filter-buttons'],this,true);"><i class="bi bi-funnel-fill"></i> Filter</button>
       </div>
-      <div class="col-3 p-0">
-        <button id="graph-btn-mini" type="button" class="btn-section widget" onclick="collapsible(['graphs'],this,true);"><i class="bi bi-bar-chart-line-fill"></i> Graph</button>
-      </div>
-      <div class="col-3 p-0">
+      <div class="col-4 p-0">
         <button id="map-btn-mini" type="button" class="btn-section widget" onclick="collapseAll();"><i class="bi bi-map-fill"></i> Map</button>
       </div>
     </div>
@@ -54,7 +51,6 @@
               <ul class="m-0">
                 <li>Click/Tap the markers on the map to see details about postings.</li>
                 <li>Add filters to reduce the amount of results on the map.</li>
-                <li>Choose a variable to compare the linear and neural network prices against the real one on a scatter plot.</li>
               </ul>
             </div>
             <div class="col-12 blue-back p-0"><h6 class="p-2 m-0">Tools</h6></div>
@@ -62,7 +58,6 @@
               <ul class="m-0">
                 <li>Linear Regression - Scikit Learn</li>
                 <li>Neural network - TensorFlow</li>
-                <li>Plots - Plotly JS</li>
                 <li>Map - Leaflet JS</li>
                 <li>Layout - Bootstrap and CSS</li>
               </ul>
@@ -121,35 +116,14 @@
             <div class="col-6 text-center d-flex my-2 ps-2 pe-1"><button class="btn grow" type="button" id="filterGo" onclick="filterMap();">Go</button></div>
             <div class="col-6 text-center d-flex my-2 ps-1 pe-2"><button class="btn grow" type="button" id="filterClear" onclick="clearFilter();" disabled>Clear</button></div>
           </div>
-          <div class="content not-shown row m-0 d-flex flex-column" id="graphs">
-            <div class="col-12 p-0 blue-back"><h6 class="p-2 m-0">Scatter plot</h6></div>
-            <div class="col-12">
-              <div class="row">
-                <div class="col-4 px-1 text-end my-3">Variable:</div>
-                <div class="col-8 ps-1 pe-3 my-3">
-                  <select id="independent">
-                    <option value="">Select...</option>
-                  </select>
-                </div>
-                <div class="separator"></div>
-              </div>
-            </div>
-            <div class="col-12 p-0" id="graphContainer"></div>
-          </div>
       </div>                       
       <div class="d-none d-md-inline not-there">
         <div class="d-flex flex-column" id="widgets">
           <button id="about-btn" type="button" class="btn side-btn widget active-now" onclick="collapsible(['about'],this,false);"><i class="bi bi-info-circle-fill"></i></button>
           <button id="filters-btn" type="button" class="btn side-btn widget" onclick="collapsible(['filters','filter-buttons'],this,false);"><i class="bi bi-funnel-fill"></i></button>
-          <button id="graph-btn" type="button" class="btn side-btn widget" onclick="collapsible(['graphs'],this,false);"><i class="bi bi-bar-chart-line-fill"></i></button>
         </div>
       </div>
       <div class="col-12 col-md-auto grow" id="map">
-      </div>
-      <div class="d-none d-md-inline not-there bottom-corner">
-        <div class="d-flex flex-column">
-          <p>Hewo</p>
-        </div>
       </div>
     </div>
   </div>
@@ -161,6 +135,5 @@
   <script src="static/js/collapsible.js"></script>
   <script src="static/js/map.js"></script>
   <script src="static/js/filter.js"></script>
-  <script src="static/js/scatter.js"></script>
 </body>
 </html>
